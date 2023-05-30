@@ -1,0 +1,237 @@
+<?php
+ob_start();
+session_start();
+if(empty($_SESSION['id_petugas'])){
+	echo"<script>
+    alert('Maaf Anda Belum Login'); 
+    window.location.assign('../index2.php');
+    </script>";
+}
+if($_SESSION['level']!='admin'){
+	echo"<script>
+    alert('Maaf Anda Bukan Admin'); 
+    window.location.assign('../index2.php');
+    </script>";
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;800&display=swap"
+    rel="stylesheet"/>
+    <!-- Line Awesome CDN Link -->
+  <link
+    rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"/>
+    <link rel="stylesheet" href="stylee.css">
+  <link rel="icon" href="../images/Logo_SMKN_2_Singosari-removebg.png" type="image/x-icon">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../AdminLTE/plugins/fontawesome-free/css/all.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../AdminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../AdminLTE/dist/css/adminlte.min.css">
+	<title>Admin | Aplikasi Pembayaran SPP</title>
+</head>
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<nav class="main-header navbar navbar-expand navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link" data-toggle="dropdown" href="#">
+        <i class="far fa-user"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        <button type="button" class="dropdown-item" onclick="logoutadmin_petugas()">
+          <i class="fas fa-fw fa-sign-out-alt mr-2"></i> Logout
+        </a>
+        <div class="dropdown-divider"></div>
+      </div>
+    </li>
+  </ul>
+  </nav>
+
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="https://smkn2-singosari.sch.id/" class="brand-link">
+      <img src="../AdminLTE/dist/img/Logo_SMKN_2_Singosari-removebg.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">SMKN 02 Singosari</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../AdminLTE/dist/img/hutao_046.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block"><?= $_SESSION['nama_petugas']?></a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <li class="nav-item">
+              <a href="admin.php" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard 
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">MANAJEMEN DATA</li>
+            <li class="nav-item">
+              <a href="admin.php?url=siswa" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                  Siswa
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.php?url=kelas" class="nav-link">
+                <i class="nav-icon fas fa-school"></i>
+                <p>
+                  Kelas
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.php?url=administrator" class="nav-link">
+                <i class="nav-icon fas fa-user-tie"></i>
+                <p>
+                  Admin
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.php?url=petugas" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Petugas
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="admin.php?url=spp" class="nav-link">
+                <i class="nav-icon fas fa-money-bill"></i>
+                <p>
+                  SPP
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">PEMBAYARAN</li>
+            <li class="nav-item">
+              <a href="admin.php?url=laporan" class="nav-link">
+                <i class="nav-icon fas fa-file"></i>
+                <p>
+                  Laporan Kelas
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">SINKRONISASI</li>
+            <li class="nav-item">
+              <a href="admin.php?url=update" class="nav-link">
+                <i class="nav-icon fas fa-sync-alt"></i>
+                <p>
+                  Update Data
+                </p>
+              </a>
+            </li>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Pembayaran SPP</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+		<h3>Aplikasi Pembayaran SPP</h3>
+		<div class="alert alert-info">
+			Login Sebagai <b>Admin</b>
+		</div>
+
+<div class="card mt-2">
+	<div class="card-body">
+		<!-- ini isi web kita -->
+		<?php
+		$file = @$_GET['url'];
+		if(empty($file)){
+			echo"<h1>Selamat Datang Di Halaman Administrator, ".$_SESSION['nama_petugas']."</h1>";
+			echo"<h6>Aplikasi Pembayaran SPP Di SMKN 02 Singosari.</h6>";
+		}else{
+			include $file.'.php';
+		}
+		?>
+	</div>
+</div>
+</div>
+	  </div>
+	</section>
+
+	<footer class="main-footer">
+    <strong>Copyright &copy; By <a href="https://www.instagram.com/softwareengineering.xii2/">12 RPL 2</a>.</strong>
+    <div class="float-right d-none d-sm-inline-block">
+      <b>XII RPL 2</b>
+    </div>
+  </footer>
+
+  <!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="../AdminLTE/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../AdminLTE/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../AdminLTE/dist/js/adminlte.js"></script>
+<script src="../js/logout.js"></script>
+<script>
+  function qq() {
+    $('#qris').modal('show'); 
+  }
+  function bank() {
+    $('#bank').modal('show'); 
+  }
+</script>
+</body>
+</html>
