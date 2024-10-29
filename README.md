@@ -1,6 +1,6 @@
 # Perkiraan Tinggi Badan Anak
 
-Proyek ini adalah aplikasi sederhana dalam bahasa Java yang memperkirakan tinggi badan anak berdasarkan tinggi badan ayah dan ibu serta jenis kelamin anak.
+Projek ini adalah aplikasi sederhana dalam bahasa Java yang memperkirakan tinggi badan anak berdasarkan tinggi badan ayah dan ibu serta jenis kelamin pada anak
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -17,14 +17,14 @@ Proyek ini adalah aplikasi sederhana dalam bahasa Java yang memperkirakan tinggi
 
 ## Prasyarat
 
-- Java Development Kit (JDK) harus terpasang pada sistem Anda.
-- Disarankan untuk menggunakan Java versi 8 ke atas.
+- Pastikan Java Development Kit (JDK) harus terpasang pada sistem PC/Laptop kalian.
+- Kami sarankan untuk menggunakan Java versi 8 ke atas.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Cara Menjalankan Program
 
-1. **Kloning atau Unduh Proyek**
+1. **Kloning atau Unduh Projek**
    - Kloning repositori ini atau unduh berkas `PerkiraanTinggiBadan2.java`.
 
 2. **Kompilasi Program**
@@ -50,8 +50,8 @@ Proyek ini adalah aplikasi sederhana dalam bahasa Java yang memperkirakan tinggi
 
 ## Informasi Tambahan
 
-- Proyek ini menggunakan perhitungan dasar untuk memberikan estimasi tinggi badan anak.
-- Estimasi ini tidak dapat dijadikan patokan akurat, karena tinggi badan dipengaruhi oleh banyak faktor lain, seperti genetika dan lingkungan.
+- Projek ini menggunakan perhitungan dasar untuk memberikan estimasi tinggi badan anak.
+- Aplikasi ini jangan pernah dijadikan patokan yang akurat, karena tinggi badan dapat dipengaruhi oleh banyak faktor lain, contoh seperti genetika, lingkungan, dan faktor makanan yang dikonsumsi.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,4 +62,5 @@ Proyek ini adalah aplikasi sederhana dalam bahasa Java yang memperkirakan tinggi
 
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-Jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut, jangan ragu untuk menghubungi pengembang proyek ini.
+Jangan lupa dukung aku dengan follow akun TikTok aku yaitu Couserr. atau bisa klik link ini:
+https://www.tiktok.com/@couserr_
