@@ -63,5 +63,5 @@ Projek ini adalah aplikasi sederhana dalam bahasa Java yang memperkirakan tinggi
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
 Jangan lupa dukung aku dengan follow akun TikTok aku yaitu Couserr. atau bisa klik link ini:
-https://www.tiktok.com/@couserr_
+https://www.tiktok.com/@couserr_?_t=8qx4lZG1CEc&_r=1
 
